@@ -40,22 +40,9 @@ class OwnerController < ApplicationController
          end
      end
     
-    # def create    
-    #     @user=Hosteler.new(get_paramas)
-    #     @room=Room.find_by(room_no:@user.room_no)
-    #     @room.vacancy=@room.vacancy-1
-    #     if @room==nil
-    #         flash[:notice]='Room does not exist'
-    #     elsif @room.vacancy<0
-    #         flash[:notice]='Not enough space in this room'
-    #         redirect_to new_owner_path
-    #     elsif @user.save && @room.save
-    #         index
-    #         render 'index'
-    #     else
-    #         render 'new'
-    #     end
-    # end
+    def student_profile
+        @user=User.find(params[:id])
+    end
      def get_paramas
          params.require(:user).permit(:firstname,:lastname,:email,:phoneno,:username,:password,:role,:hostel_id,:room_no)
      end

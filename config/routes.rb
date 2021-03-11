@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'hostel_operation#index'
   devise_for :users, controllers: {registrations: 'user/registrations' , sessions: 'user/sessions' }
   get 'owner/all_request'
+  get 'owner/student_profile'
   get 'leave/show_owner'
   get 'room_management/get_all_room'
   resources :hostel_operation

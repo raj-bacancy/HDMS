@@ -45,7 +45,12 @@
                 <%=f.text_field :room_no, class:'form-control',readonly:true%>
               </div>
             </div>
-
+            <div class="row mt-2">
+              <div class="col">
+                <label>Upload Your Photo :</label>
+                <%=f.file_field :ProfilePic, class:'form-control'%>
+              </div>
+            </div>
             <div class="field">
               <%= f.label :password %>
               <% if @minimum_password_length %>

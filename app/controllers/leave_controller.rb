@@ -32,6 +32,7 @@ class LeaveController < ApplicationController
     end
 
     def show_owner 
+        
         if current_user.id!=nil
             @all_leave=Leave.where(status:'Pending')
         end        
@@ -39,9 +40,10 @@ class LeaveController < ApplicationController
 
     def update
         if params[:flag]=='approve'
-            @leave=Leave.find(params[:id])
-            @leave.status='Approved'
-            @leave.save
+             @leave=Leave.find(params[:id])
+             @leave.status='Approved'
+             @leave.save
+            LeaveMailMailer.sendLeaveApplication(@leave).deliver
         elsif params[:flag]=='reject'
             @leave=Leave.find(params[:id])
             @leave.status='Rejected'

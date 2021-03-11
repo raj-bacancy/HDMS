@@ -6,12 +6,14 @@
 	<%@users.each do |user|%>	
 		<div class="col-lg-6 col-md-6 col-12 mb-3" style="border:0px solid black">
 				 <div class="card" style="width:auto;border:2px solid orange;border-radius: 5%;background-color:#FBF3F2 ">
-				  <center><div><img class="card-img-top mt-3" src="#" alt="Card image" style="width:150px;height:200px;"></div></center>
+				 	<%if user.ProfilePic.attached?%>
+				  <center><div><image class="card-img-top mt-3" src=<%=url_for(user.ProfilePic)%> alt="Card image" style="width:150px;height:150px;"></div></center>
+				  	<%end%>
 				  <div class="card-body">
 				    <center><h4 class="card-title"><%=user.firstname%></h4></center>
 				    <p class="card-text"><b>Email-id : <%=user.email%></b></p>
 				    <p class="card-text"><b>Phone No : <%=user.phoneno%></b></p>
-				    <center><a href="viewprofile.html?hostelid=${l.hostelid}" class="btn btn-primary"><b>See Profile</b></a></center>
+				    <center><%=link_to "See Profile",owner_student_profile_path(id:user.id)%><b>See Profile</b></center>
 				  </div>
 				</div>
 		</div>

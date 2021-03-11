@@ -1,0 +1,31 @@
+<%= render 'header' %>
+<%= render 'menu' %>
+<div id="profile" style="height:auto;width:60%;margin-top:5%;margin-left:30%;border:2px solid orange;border-radius:5%" class="bg-light">
+		 <center><div class="mt-3"><image src=<%=url_for(@user.ProfilePic)%> height="350px" width="30%"></div></center>
+	  <center><table class="information_table" style="margin-right:15%">
+	   <center> <tr>
+	   <th><p>Name:</p></th><td></td> 
+	   <td><p><%=@user.firstname%> <%=@user.lastname%> </p></td>
+	   </tr>
+	  
+	   <tr>
+	   <th><p>Email:</p></th><td></td>
+	   <td><p><%=@user.email%></p></td>
+	   </tr>
+	   
+	   <tr>
+	   <th><p>Mobile No:</p></th><td></td>
+	   <td><p><%=@user.phoneno%></p></td>
+	   </tr>
+		
+	   
+		<br>			
+	   </table></center><br><br>
+	   <div class="mb-5 ml-5">
+ <h4><b>History Of Student</b></h4><br>
+	<a href="ownerfeestatus.html?hostelid=${hostelid}">Fee Requests Details</a><br>
+	<a href="ownergueststaystatus.html?hostelid=${hostelid}">Guests Night Stay Requests Details</a><br>
+	<a href="ownerleaveapplicationstatus.html?hostelid=${hostelid}">Leave Requests Details</a><br>
+	<a href="ownerfoodstatus.html?hostelid=${hostelid}">Food Coupon Requests Details</a><br><br>
+	</div>	
+</div>

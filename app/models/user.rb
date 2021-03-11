@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :leave
+  has_one_attached :ProfilePic
 
     before_create :add_role
 

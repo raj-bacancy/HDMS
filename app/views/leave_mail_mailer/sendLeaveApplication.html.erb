@@ -1,0 +1,19 @@
+<h1>Leave Approved</h1><br>
+<table border="1px solid black">
+	<tr>
+		<th>Name</th>
+		<th>Date From</th>
+		<th>Date To</th>
+		<th>Subject</th>
+		<th>Reason</th>
+	</tr>
+
+	<tr>
+		<td><%=@leaveApplication.user.firstname%> <%=@leaveApplication.user.lastname%></td>
+		<td><%=@leaveApplication.date_from%></td>
+		<td><%=@leaveApplication.date_to%></td>
+		<td><%=@leaveApplication.subject%></td>
+		<td><%=@leaveApplication.reason%></td>
+	</tr>
+
+</table>
