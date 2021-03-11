@@ -1,0 +1,59 @@
+<%= render 'owner/header' %>
+<%= render 'owner/menu' %>
+<div class="container">
+	<div class="row mt-3">
+			<div class="col-lg-6 col-md-6 col-12" style="border:0px solid black">
+			 <div class="card mt-5 ml-5 " style="border:2px solid orange;width:80%; float:left;border-radius:7%">
+				  <center><i class='fa fa-info-circle mt-2' style='font-size:100px;color:#FC3900'></i></center>
+				  <hr>
+				  <div class="row" style="height:auto;width:100%;border:0px solid black">
+				  	<div class="col col-7"><h4 class="ml-3 mt-1"><%= link_to 'Room Information',room_management_get_all_room_path,class:"link text-black"%></b></h4>
+				  	</div>
+				  	<div class="col col-2"><div style="height:90%;width:1%;border:2px solid black"></div>
+				  	</div>
+				  	<div class="col col-3"><h4 class=" mt-1"><b>4</b></h4>
+				  	</div>
+				  </div>
+			</div>
+			<a href="deallocaetroom.html"><div class="card mt-5 ml-5" style="border:2px solid orange;width:80%; float:left;border-radius:7%">
+					<center><i class='fas fa-exchange-alt mt-2' style='font-size:100px;color:#FC3900'></i></center>
+				  <hr>
+				  <div class="row" style="height:auto;width:100%;border:0px solid black">
+				  	<div class="col col-7"><h4 class="ml-3 mt-1"><b>De-allocate<br>Room</b></h4>
+				  	</div>
+				  	<div class="col col-2"><div style="height:90%;width:1%;border:2px solid black"></div>
+				  	</div>
+				  	<div class="col col-3"><h4 class=" mt-1"><b>3</b></h4>
+				  	</div>
+				  </div>				 
+			</div> </a>
+		</div>
+		<div class="col-lg-6 col-md-6 col-12" style="border:0px solid black">
+			 <div class="card mt-5 ml-5" style="border:2px solid orange;width:80%; float:left;border-radius:7%">
+				  <center><i class='fas fa-plus mt-2' style='font-size:100px;color:#FC3900'></i></center>
+				  <hr>
+				  <div class="row" style="height:auto;width:100%;border:0px solid black">
+				  	<div class="col col-7"><h4 class="ml-3 mt-1"><b><%= link_to 'Add Room',new_room_management_path,class:"link text-black"%></h4>
+				  	</div>
+				  	<div class="col col-2"><div style="height:90%;width:1%;border:2px solid black"></div>
+				  	</div>
+				  	<div class="col col-3"><h4 class=" mt-1"><b>5</b></h4>
+				  	</div>
+				  </div>
+			</div>
+			<a href="loadremoveroom.html"><div class="card mt-5 ml-5" style="border:2px solid orange;width:80%; float:left;border-radius:7%">
+				  <center><i class='fas fa fa-times mt-2' style='font-size:100px;color:#FC3900'></i></center>
+				  <hr>
+				  <div class="row" style="height:auto;width:100%;border:0px solid black">
+				  	<div class="col col-7"><h4 class="ml-3 mt-1"><b>Remove<br> Room</b></h4>
+				  	</div>
+				  	<div class="col col-2"><div style="height:90%;width:1%;border:2px solid black"></div>
+				  	</div>
+				  	<div class="col col-3"><h4 class=" mt-1"><b>23</b></h4>
+				  	</div>
+				  </div>
+			</div></a>
+		</div>
+	</div>
+</div>
+</div>

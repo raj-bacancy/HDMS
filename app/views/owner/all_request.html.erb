@@ -1,0 +1,59 @@
+<%= render 'header' %>
+<%= render 'menu' %>
+<div class="container">
+	<div class="row mt-5">
+		<div class="col-lg-6 col-md-6 col-12" style="border:0px solid black">
+			 <a href="#"><div class="card mt-5 ml-5" style="border:2px solid orange;width:80%; float:left;border-radius:7%">
+				  <center><i class='fas fa-exclamation-triangle mt-2' style='font-size:100px;color:#FC3900'></i></center>
+				  <hr>
+				  <div class="row" style="height:auto;width:100%;border:0px solid black">
+				  	<div class="col col-7"><h4 class="ml-3 mt-1"><b>Fee Request</b></h4>
+				  	</div>
+				  	<div class="col col-2"><div style="height:90%;width:1%;border:2px solid black"></div>
+				  	</div>
+				  	<div class="col col-3"><h4 class=" mt-1"><b>0</b></h4>
+				  	</div>
+				  </div>
+			</div></a>
+			<a href="#"><div class="card mt-5 ml-5" style="border:2px solid orange;width:80%; float:left;border-radius:7%">
+					<center><i class='fas fa-bed mt-2' style='font-size:100px;color:#FC3900'></i></center>
+				  <hr>
+				  <div class="row" style="height:auto;width:100%;border:0px solid black">
+				  	<div class="col col-7"><h4 class="ml-3 mt-1"><b>Guest's Stay</b></h4>
+				  	</div>
+				  	<div class="col col-2"><div style="height:90%;width:1%;border:2px solid black"></div>
+				  	</div>
+				  	<div class="col col-3"><h4 class=" mt-1"><b>0</b></h4>
+				  	</div>
+				  </div>				 
+			</div></a>
+		</div>
+		<div class="col-lg-6 col-md-6 col-12" style="border:0px solid black">
+			 <div class="card mt-5 ml-5" style="border:2px solid orange;width:80%; float:left;border-radius:7%">
+				  <center><i class='fa fa-building mt-2' style='font-size:100px;color:#FC3900'></i></center>
+				  <hr>
+				  <div class="row" style="height:auto;width:100%;border:0px solid black">
+				  	<div class="col col-7"><h4 class="ml-3 mt-1"><b><%=link_to 'Leave Request',leave_show_owner_path%></b></h4>
+				  	</div>
+				  	<div class="col col-2"><div style="height:90%;width:1%;border:2px solid black"></div>
+				  	</div>
+				  	<div class="col col-3"><h4 class=" mt-1"><b><%=@no_of_leave%></b></h4>
+				  	</div>
+				  </div>
+			</div>
+			<a href="#"><div class="card mt-5 ml-5" style="border:2px solid orange;width:80%; float:left;border-radius:7%">
+				  <center><i class='fas fa-concierge-bell mt-2' style='font-size:100px;color:#FC3900'></i></center>
+				  <hr>
+				  <div class="row" style="height:auto;width:100%;border:0px solid black">
+				  	<div class="col col-7"><h4 class="ml-3 mt-1"><b>Food Coupon</b></h4>
+				  	</div>
+				  	<div class="col col-2"><div style="height:90%;width:1%;border:2px solid black"></div>
+				  	</div>
+				  	<div class="col col-3"><h4 class=" mt-1"><b>0</b></h4>
+				  	</div>
+				  </div>
+			</div></a>
+		</div>
+	</div>
+</div>
+</div>

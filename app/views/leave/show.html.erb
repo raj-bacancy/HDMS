@@ -1,0 +1,27 @@
+<%= render 'owner/header' %>
+<%= render 'student/menu' %>
+<div style="height:auto;width:60%;margin-top:5%;margin-left:30%;border:2px solid orange;border-radius:5%" class="bg-light">
+	   			<h2 class="pt-4 text-center "><b>Leave Request Status</b></h2>
+	   			<hr>
+		   			<table class="table table-stripped table-hover table-bordered">
+		   	<tr>
+			<th><b>No.</b></th>
+			<th><b>Leave From:</b></th>
+			<th><b>Leave To:</b></th>
+			<th><b>Reason For Leave</b></th>
+			<th><b>Status</b></th>
+			
+		</tr>
+        <%i=0%>
+       <%@leaves.each do |f|%>
+			
+			<tr>
+				<td><%=i=i+1%></td>
+				<td><%=f.date_from%></td>
+				<td><%=f.date_to%></td>
+				<td><%=f.reason%></td>
+				<td><%=f.status%></td>
+			</tr>
+			<%end%>
+	</table>
+</div>

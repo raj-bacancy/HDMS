@@ -1,0 +1,66 @@
+<%= render 'owner/header' %>
+<%= render 'menu' %>
+<div style="height:auto;width:70%;margin-top:2%;margin-left:25%;border:2px solid orange;border-radius:5%" class=" mb-5 bg-light">
+	   			<h3 class="pt-4 text-center"><b> Hello <%=@user.firstname%> Welcome To Room No <%=@user.room_no%></b></h3>
+	   			<hr><br>
+		   			
+		   				<div class="row pl-5">
+						    <div class="col">
+						    	<center><h5><b>Room Members:</b></h5></center>
+						    </div>
+						  </div><br>
+						  
+						  <div class="row pl-5">
+							    <%@room_members.each do |member|%>
+							    <div class="col">
+							      	<b>Name= <%=member.firstname%> <%=member.lastname%><br>
+							      	Phone no=<%=member.phoneno%></b>
+							     </div>
+							     <%end%>
+						  </div><br><br>
+						  
+						   <div class="row pl-5">
+							   <div class="col">
+							    	<center> <h5><b>Hostel Information:</b></h5></center>
+							    </div>
+						  </div><br>
+							  
+						  <div class="row pl-5">
+							   <div class="col">
+							    	<h5><b>About no of room:</b></h5>
+							    </div>
+						  </div>
+						  
+						  <div class="row pl-5">
+							    <div class="col">
+							    	<b>Total no of room = <%=@total_rooms%></b>
+							    </div>
+							    <div class="col">
+							    	<b>No of student's room = <%=@total_rooms%></b>
+							    </div>
+							    <div class="col">
+							    	<b>No of guest's rooms = 0</b>
+							    </div>
+						  </div><br>
+						  
+						  <div class="row pl-5">
+							   <div class="col">
+							    	<h5><b>About capacity of hostel:</b></h5>
+							    </div>
+						  </div>
+						  
+						  <div class="row pl-5">
+							    <div class="col">
+							    	<b>Capacity for students = <%=@total_capacity%></b>
+							    </div>
+							    <div class="col">
+							    	<b>No of students in hostel  = <%=@total_capacity-@total_vacancy%></b>
+							    </div>
+							    <div class="col">
+							    	<b>Vacancy in hostel = <%=@total_vacancy%></b>
+							    </div>
+						  </div><br>
+						   
+						   
+					
+	   		</div>

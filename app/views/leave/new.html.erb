@@ -1,0 +1,49 @@
+<%= render 'owner/header' %>
+<%= render 'student/menu' %>
+<div style="height:auto;width:60%;margin-top:5%;margin-left:30%;border:2px solid orange;border-radius:5%" class="bg-light">
+	   			<h2 class="pt-4 text-center"><b>Leave Application Apply</b></h2>
+	   			<hr>
+                   <%= form_for @leave,url:student_leave_index_path(current_user.id),method:'post' do |f| %>
+                    <div class="row">
+                        <div class="col-3 col-sm-3 "><h3 class="pl-4">Email:</h3></div>
+                        <div class="col-5 col-sm-5 mb-5"><%=text_field_tag 'HostelId',@user.email,class:'form-control',readonly:true%></div>
+                        <div class="col-4 col-sm-4"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3 col-sm-3 "><h3 class="pl-4">Subject:</h3></div>
+                        <div class="col-5 col-sm-5 mb-5"><%=f.text_field :subject,class:'form-control'%></div>
+                        <div class="col-4 col-sm-4"></div>
+                    </div>
+
+                    
+                    
+                    <div class="row">
+                        <div class="col-3 col-sm-3"><h3 class="pl-4">Leave From:</h3></div>
+                        <div class="col-3 col-sm-3 "><%=f.date_field :date_from,class:'form-control'%></td><td></div>
+                        <div class="col-3 col-sm-3"><h3>Leave To:</h3></div>
+                        <div class="col-3 col-sm-3"><%=f.date_field :date_to,class:'form-control'%></div>
+                    
+                    </div>	
+                    <br>
+                    
+                    <div class="row">
+                        
+                        <div class="col-3 col-sm-3"><h3 class="pl-4">Reason for Leave:</h3></div>
+                        <div class="col-9 col-sm-9">
+                        <%=f.text_area :reason,class:'form-control',placeholder:"Valid Reason for leave Application",required: true%>
+                        </div>
+                    
+                    
+                    </div>
+                    <br><br>
+                    <div class="row">
+                        <div class="col-12 col-sm-12">
+                        <center>
+                        <%=f.submit 'Apply',class:'mb-3'%>
+                        </center>
+                        </div>
+                    </div>
+                   <% end %>
+		   			
+	   		</div>

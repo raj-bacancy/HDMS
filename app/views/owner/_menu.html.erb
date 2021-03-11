@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<div>
+	<table class="table table-hover table-striped" style="width:20%;background-color:#f4511e;float:left">
+		<thead class="thead-dark">
+			<tr>
+				<th >Dashboard<i class="fa fa-dashboard  float-right" style="font-size:24px;color:white"></i>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="text-warning"><a href="#" class="link"><div style="height:100%;width:100%;"><i class='fas fa-home' style='font-size:35px;color:white;'></i><x class="ml-4" style="color:black"><b><%= link_to 'Home', owner_index_path,class:"link text-white" %></b></x></div></a>
+				</td>
+     		</tr>
+      		<tr>
+    			<th><a href="#" class="link text-white"><div style="height:100%;width:100%"><i class='fas fa-user-graduate' style='font-size:35px;color:white'></i><x class="ml-4" style="color:black"><b> View Student Info.</b></x></div></a>
+    			</th>
+    		</tr>
+    		<tr>
+  			    <th ><div style="height:100%;width:100%"><i class='fas fa-user-edit' style='font-size:40px;color:white'></i><x class="ml-4" style="color:black"><b><%= link_to 'Request', owner_all_request_path,class:"link text-white" %></b></x></div>
+  			    </th>
+  			</tr>
+     		<tr>
+    			<th><div style="height:100%;width:100%"><i class='fas fa-id-card' style='font-size:40px;color:white'></i><x class="ml-4" style="color:black"><%= link_to 'Generate Hostel Id', new_owner_path ,class:"link text-white"%></x></div>
+					
+				</th>
+    		</tr>
+    		<tr>
+    			<th ><div style="height:100%;width:100%"><i class='fas fa-th-list' style='font-size:40px;color:white'></i> <x class="ml-4" style="color:black"><%= link_to 'Room Management', room_management_index_path ,class:"link text-white"%></x></div>
+    			</th>
+    		</tr>
+     		<tr>
+  			    <th><a href="#" class="link text-white"><div style="height:100%;width:100%"><i class='fa fa-bar-chart' style='font-size:40px;color:white'></i> <x class="ml-4" style="color:black"><b>Analysis</b></x></div></a>
+  			    </th>
+    		</tr>
+    		<tr>
+    			<th><a href="#" class="link text-white"><div style="height:100%;width:100%"><i class='fa fa-address-card-o' style='font-size:40px;color:white'></i><x class="ml-4" style="color:black"><b> Attendance</b></x></div></a>
+    			</th>
+    		</tr>
+     		<tr>
+    			<th><a href="#" class="link text-white "><div style="height:100%;width:100%"><i class='fa fa-exclamation-circle' style='font-size:40px;color:white'></i><x class="ml-4" style="color:black"><b> View Complains</b></x></div></a></th>
+    		</tr>
+    		<tr>
+		     	<th ><a href="#" class="link text-white"><div style="height:100%;width:100%"><i class='fa fa-commenting' style='font-size:40px;color:white'></i><x class="ml-4" style="color:black"><b>Message for student</b></x></div></a></th>
+		     </tr>
+    		<tr>
+    			<th ><div style="height:100%;width:100%"><i class='fa fa-sign-out' style='font-size:40px;color:white'></i> <x class="ml-4" style="color:black">
+            <%= button_to 'Logout_devise', destroy_user_session_path,class:"link text-white",method:'delete'%>
+            <%= link_to 'Logout', hostel_operation_index_path ,class:"link text-white"%>
+    			</th>
+   			 </tr>
+		</tbody>
+</table>
+</div>

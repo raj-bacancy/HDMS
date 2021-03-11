@@ -1,0 +1,28 @@
+<%= render 'owner/header' %>
+<%= render 'owner/menu' %>
+<%i=1%>
+<div style="height:auto;width:60%;margin-top:5%;margin-left:30%;border:2px solid orange;border-radius:5%" class="bg-light">
+	   			<h2 class="pt-4 text-center "><b>Room Information</b></h2>
+	   			<hr>
+		   			<table class="table table-stripped table-hover table-bordered">
+		   	<tr class="table-danger">		
+		   	<td><b>No.</b></td>
+			<td><b>Room No</b></td>
+			<td><b>Capacity Of Room</b></td>
+			<td><b>Current Member In Room</b></td>
+			<td><b>View Room</b></td>
+			</tr>
+			
+			
+			 <%@rooms.each do |room|%>	
+			<tr>	
+		   	<td><b><%=i%></b></td>
+			<td><b><%=room.room_no%></b></td>
+			<td><b><%=room.capacity%></b></td>
+			<td><b><%=room.capacity-room.vacancy%></b></td>
+			<td><center><b><%=link_to 'View Room', room_management_path(room.id)%></b></center></td>
+			</tr><%i=i+1%>
+			<%end%>	   			
+		   			</table>
+	   		</div>
+</div>

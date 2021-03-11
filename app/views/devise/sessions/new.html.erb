@@ -1,0 +1,74 @@
+<div class="container">
+
+  <div class="container text-center">
+    <h2 class=" pt-3 pb-2"><b>Welcome to <a style="color:  #FF5C20">Hostel</a> management System</b></h2>
+    <hr class="w-100 mx-auto">
+  </div>
+
+   <div class="row mt-2">
+    <div class="col-sm-6 col-12">
+      <h2><b>Log In From Here</b></h2>
+      <%=form_for @user,url:user_session_path,method:'post' do |f|%>
+          <div class="row mt-4">
+              <div class="col">
+                <label>Enter Your Role :</label><br>  
+              <%=f.select :role,['owner','student'],{},{class:'form-control'}%>
+              </div>
+            </div>
+    
+            <div class="row mt-2">
+              <div class="col">
+                <label>Email :</label>
+                <%=f.email_field :email, class:'form-control'%>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col">
+                <label>Password :</label>
+                  <%=f.password_field :password, class:'form-control'%>
+                
+              </div>
+            </div><br>
+          <%=f.submit 'Log In'%>   
+                <%end%>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-12" style="border:2px solid orange ; border-radius: 5%">
+      <div class="ml-5 mt-2">
+      <h2 class="pt-5"><b>About this platform</b></h2><br>
+      <p>In current scenario owner has to keep the record of all hosteller on paper which is very difficult to manage, search, update etc. If owner want some data of perticular hosteller then it would be very difficult for him/her to find out data and it is also time consuming.</p>
+      <p>So this is the platform where owner can store each and every information of hosteller as well as about the hostel with few clicks. This system is designed in favour of the database management which helps them to save rent related data, food management, vacancies of rooms, guest night stay data etc.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!--<h2>Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>-->
+
+<%= render "devise/shared/links" %>

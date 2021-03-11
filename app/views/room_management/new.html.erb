@@ -1,0 +1,29 @@
+<%= render 'owner/header' %>
+<%= render 'owner/menu' %>
+<div style="height:auto;width:50%;margin-top:5%;margin-left:35%;border:2px solid orange;border-radius:5%" class="bg-light">
+	   			<h2 class="pt-4 text-center"><b>Add Room</b></h2>
+	   			<hr>
+                   <%=form_for @room,url:room_management_index_path,method:'Post' do |f|%>
+						  
+						  <div class="row pl-5 pt-4">
+						    <div class="col">
+						      <label class="pt-2"><b>Room No</b></label>
+                              <%=f.text_field :room_no,class:"form-control",style:"width:60%"%>
+							  <span style='color:red'><%=@room.errors[:room_no].to_sentence%></span>
+						    </div>
+						  </div>
+						  <div class="row pl-5">
+						    <div class="col">
+						      <label class="pt-2"><b>Capacity</b></label>
+                              <%=f.text_field :capacity,class:"form-control",style:"width:60%"%>
+							  <span style='color:red'><%=@room.errors[:capacity].to_sentence%></span>
+						    </div>
+						  </div>
+						  <div class="row pl-5 pb-5">
+						    <div class="col">
+                            <%=f.submit 'Add Room',class:"btn btn-primary mt-3"%>
+						    </div>
+						  </div>	  
+					
+                    <%end%>
+	   		</div>
