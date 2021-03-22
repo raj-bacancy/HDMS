@@ -4,8 +4,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+         
   has_many :leave
+  has_many :hostelfee
   has_one_attached :ProfilePic
 
     before_create :add_role

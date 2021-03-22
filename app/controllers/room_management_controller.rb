@@ -1,6 +1,4 @@
 class RoomManagementController < ApplicationController
-  def index    
-    end
 
     def show
         @users=User.where(room_no:params[:id])
@@ -15,6 +13,7 @@ class RoomManagementController < ApplicationController
     end
 
     def create
+        byebug
         @room=Room.new(get_params)
     
         if @room.save

@@ -6,17 +6,6 @@ class OwnerController < ApplicationController
          @total_vacancy=Room.sum('vacancy');
      end
 
-    # def new
-    #     @user=User.new
-    # end
-
-    # def index
-    #     @owner=Hosteler.find_by(role:'owner')
-    #     @total_rooms=Room.all.size
-    #     @total_capacity=Room.sum('capacity');
-    #     @total_vacancy=Room.sum('vacancy');
-    # end
-
     def new
         @user=User.new
     end

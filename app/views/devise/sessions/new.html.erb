@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'abc' %>
+
 <div class="container">
 
   <div class="container text-center">
@@ -29,7 +31,8 @@
                 
               </div>
             </div><br>
-          <%=f.submit 'Log In'%>   
+          <%=f.submit 'Log In',onclick:'abc1();'%> 
+          <%= f.submit 'check', onClick: 'abc1();'  %>  
                 <%end%>
     </div>
 

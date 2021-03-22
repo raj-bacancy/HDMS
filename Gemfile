@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
+
+gem 'httparty'
 gem 'jquery-rails'
 gem 'rails-ujs'
 gem 'devise'
@@ -51,5 +53,16 @@ group :test do
   gem 'webdrivers'
 end
 
+group :development, :test do
+ gem 'database_cleaner'
+ gem 'factory_bot_rails'
+ gem 'faker', '~> 2.4.0'
+ gem 'pry-rails'
+ gem 'rspec-rails','~> 4.0.0'
+ gem 'shoulda-matchers', '~> 3.1'
+ gem 'simplecov', require: false
+end
+
+gem 'rails-controller-testing'  
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

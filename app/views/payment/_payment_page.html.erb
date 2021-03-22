@@ -1,0 +1,80 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<!-- Payment Page   -->
+<%= form_with url:payment_index_path,method: :post do |f|%>
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Payment Details
+                    </h3>
+                    <div class="checkbox pull-right">
+                        <label>
+                            <input type="checkbox" />
+                            Remember
+                        </label>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    
+                    <div class="form-group">
+                        <label for="cardNumber">
+                            CARD NUMBER</label>
+                        <div class="input-group">
+                            <input onkeypress="return isNumberKey(event)" type="text" name="cardnumber" class="form-control" id="cardnumber" placeholder="Valid Card Number"
+                                required autofocus />
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        </div>
+                        <span id='cardnumerror' style="color: red ;display:none">Invalid Card Number</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cardNumber">
+                            NAME ON CARD</label>
+                        <div class="input-group">
+                            <input onkeypress="return (event.charCode > 64 && 
+                            event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"  type="text" name="nameoncard" class="form-control" id="cardowner" placeholder="Name"
+                                required autofocus />
+                        </div>
+                        <span id='cardownererror' style="color: red ;display:none">Invalid Card Owner</span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-7 col-md-7">
+                            <div class="form-group">
+                                <label for="expityMonth" style="margin-right:19%">
+                                    EXPIRY DATE</label>
+                                <div class="col-xs-6 col-lg-6 pl-ziro" >
+                                    <input onkeypress="return isNumberKey(event)" type="text" name="month" class="form-control" id="expityMonth" placeholder="MM" required />
+                                </div>
+                                <div class="col-xs-6 col-lg-6 pl-ziro">
+                                    <input onkeypress="return isNumberKey(event)" type="text" name="year" class="form-control" id="year" placeholder="YY" required /></div>
+                            </div>
+                            <span id='expyearerror' style="color: red ;display:none">Invalid Exp Year</span>
+                        </div>
+                        <div class="col-xs-5 col-md-5 pull-right">
+                            <div class="form-group">
+                                <label for="cvCode">
+                                    CVV</label>
+                                <input onkeypress="return isNumberKey(event)" type="password" name="cvv" class="form-control" id="cvc" placeholder="CVV" required />
+                                <span id='cvcerror' style="color: red ;display:none">Invalid CVV</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#"><span class="badge pull-right"><span class="fa fa-inr"></span>1765</span> Final Payment</a>
+                </li>
+            </ul>
+            <br/>
+            <%=f.submit 'Pay',class: "btn btn-success btn-lg btn-block" ,onclick:'return validate()',role:"button"%>
+        </div>
+    </div>
+
+<%end%>

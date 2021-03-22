@@ -1,0 +1,26 @@
+<%= render 'owner/header' %>
+<%= render 'student/menu' %>
+<div style="height:auto;width:60%;margin-top:5%;margin-left:30%;border:2px solid orange;border-radius:5%" class="bg-light">
+	   			<h2 class="pt-4 text-center "><b>Fee Receipt Status</b></h2>
+	   			<hr>
+		   			<table class="table table-stripped table-hover table-bordered">
+		   	<tr class="table-danger">		
+		   	<td><b>No.</b></td>
+			<td><b>Email</b></td>
+			<td><b>Year</b></td>
+			<td><b>Status</b></td>
+			</tr>
+			
+			<%j=0%>
+			 <%@hostelfee.each do |i|%>
+			 <%j=j+1%>
+			<tr>	
+		   	<td><b><%=j%></b></td>
+			<td><b><%=i.user.email%></b></td>	
+			<td><b><%=i.year%></b></td>
+			<td><b><%=i.status%></b></td>
+			</tr>
+			<%end%> 		   			
+		   			</table>
+	   		</div>
+</div>

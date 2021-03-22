@@ -1,0 +1,33 @@
+<%= render 'student/header' %>
+<%= render 'student/menu' %>
+<div class="container">
+	<%if flash[:notice]%>
+    <%=flash[:notice]%>
+    <%end%>
+
+	<div class="row pl-5" style="margin-top:10%;">
+		
+
+		<div class="col-sm-6 col-6 pl-5" >
+			 <div class="card mt-5 ml-5" style="border:2px solid orange;width:80%; float:left;border-radius:7%">
+				  <center><i class='fas fa-upload mt-2' style='font-size:100px;color:#FC3900'></i></center>
+				  <hr>
+				  <div class="row" style="height:auto;width:100%;border:0px solid black">
+				  	<div class="col text-center"><h4 class="ml-3 mt-1"><b><%=link_to 'Pay Hostel Fee',new_student_hostelfee_path(current_user.id)%></b></h4>
+				  	</div>
+				  </div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-6 pl-5" style="border:0px solid black">
+			  <div class="card mt-5 ml-5" style="border:2px solid orange;width:80%; float:left;border-radius:7%">
+				  <center><i class='fas fa-question-circle mt-2' style='font-size:100px;color:#FC3900'></i></center>
+				  <hr>
+				  <div class="row" style="height:auto;width:100%;border:0px solid black">
+				  	<div class="col text-center"><h4 class="ml-3 mt-1"><b><%=link_to 'Fee Receipt Status',student_hostelfee_path(current_user.id,1)%></b></h4>
+				  	</div>
+				  </div>
+			</div>
+	   </div>	
+	</div>
+</div>
+</div>
