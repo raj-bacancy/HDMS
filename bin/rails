@@ -1,4 +1,3 @@
-
 #!/usr/bin/env ruby.exe
 if ENV['RAILS_ENV'] == 'test'
   require 'simplecov'
