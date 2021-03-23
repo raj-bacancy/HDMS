@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_03_15_174616) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -38,6 +41,31 @@ ActiveRecord::Schema.define(version: 2021_03_15_174616) do
     t.integer "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "e_mains", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "edu_docs", force: :cascade do |t|
+    t.string "documentname"
+    t.string "documentid"
+    t.string "documenttype"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_edu_docs_on_user_id"
+  end
+
+  create_table "gov_docs", force: :cascade do |t|
+    t.string "documentname"
+    t.string "documentid"
+    t.string "documenttype"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_gov_docs_on_user_id"
   end
 
   create_table "hostelfees", force: :cascade do |t|
