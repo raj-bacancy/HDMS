@@ -6,7 +6,6 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
    def new
-    byebug
      @user=User.new
   end
 
@@ -30,7 +29,6 @@ class User::RegistrationsController < Devise::RegistrationsController
    def update
      @user=User.find(current_user.id)
      @user.update(get_params)
-     byebug
       @user.save
        if @user.role=='owner'
           redirect_to owner_index_path

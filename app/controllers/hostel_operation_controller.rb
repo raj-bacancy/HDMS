@@ -31,7 +31,6 @@ class HostelOperationController < ApplicationController
     # end
   
     # def create
-    #     byebug
     #    @user=User.new(get_paramas)
     #    @user.save
     

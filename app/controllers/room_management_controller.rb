@@ -13,7 +13,6 @@ class RoomManagementController < ApplicationController
     end
 
     def create
-        byebug
         @room=Room.new(get_params)
     
         if @room.save
