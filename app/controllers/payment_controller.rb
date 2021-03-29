@@ -18,14 +18,17 @@ class PaymentController < ApplicationController
     			  'Content-Type' => 'application/x-www-form-urlencoded',
     			  'Authorization' => 'Bearer '+@SecretKey } )
 		@token_id=JSON.parse(@result.to_json)['id'];
-
+	if @token_id!=nil
 		pay(@token_id)
-    @hostelfee=current_user.hostelfee.new()
-    @hostelfee.year=Date.today.year
-    @hostelfee.status=true
-    if @hostelfee.save!
-      redirect_to student_hostelfee_index_path(current_user.id)
-    end
+		@hostelfee=current_user.hostelfee.new()
+		@hostelfee.year=Date.today.year
+		@hostelfee.status=true
+      	redirect_to student_hostelfee_index_path(current_user.id)
+	else
+		flash[:PaymentNotice]='Payment Failed'
+		redirect_to new_student_hostelfee_path(current_user.id)
+	end
+
 	end
 
 	private
@@ -43,12 +46,13 @@ class PaymentController < ApplicationController
     			  'Content-Type' => 'application/x-www-form-urlencoded',
     			  'Authorization' => 'Bearer '+@SecretKey } )
 		@token_id=JSON.parse(@result.to_json)['id'];
-
+			 
 		pay(@token_id)
     
 	end
 
 	def pay token_id
+		puts '-----------------------------------------------'+token_id.to_s
 		@result = HTTParty.post('https://api.stripe.com/v1/charges', 
     :body => { 'amount' => '176500', 
                'currency' => 'inr', 
@@ -59,7 +63,8 @@ class PaymentController < ApplicationController
     :headers => { 
     			  'Content-Type' => 'application/x-www-form-urlencoded',
     			  'Authorization' => 'Bearer '+@SecretKey } )
-
-		puts @result		
+			 
+		puts @result
+		
 	end
 end

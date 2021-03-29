@@ -18,5 +18,6 @@ Turbolinks.start()
 ActiveStorage.start()
 
 require("packs/validate")
+require("packs/validate_sign_up")
 
 

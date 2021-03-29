@@ -11,7 +11,9 @@ class LeaveController < ApplicationController
             if @leave.save
                 redirect_to student_leave_index_path(current_user.id)
             else
-                redirect_to student_leave_index_path(current_user.id)
+                @user=User.find(current_user.id)
+                render 'new'
+                #redirect_to new_student_leave_path(current_user.id)
             end
     end
 

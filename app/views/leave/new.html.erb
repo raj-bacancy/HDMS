@@ -7,23 +7,23 @@
                     <div class="row">
                         <div class="col-3 col-sm-3 "><h3 class="pl-4">Email:</h3></div>
                         <div class="col-5 col-sm-5 mb-5"><%=text_field_tag 'HostelId',@user.email,class:'form-control',readonly:true%></div>
-                        <div class="col-4 col-sm-4"></div>
                     </div>
 
                     <div class="row">
                         <div class="col-3 col-sm-3 "><h3 class="pl-4">Subject:</h3></div>
-                        <div class="col-5 col-sm-5 mb-5"><%=f.text_field :subject,class:'form-control'%></div>
-                        <div class="col-4 col-sm-4"></div>
+                        <div class="col-5 col-sm-5 mb-5"><%=f.text_field :subject,class:'form-control'%>
+                        <span style='color:red'><%=@leave.errors[:subject].to_sentence%></span></div>
                     </div>
 
                     
                     
                     <div class="row">
                         <div class="col-3 col-sm-3"><h3 class="pl-4">Leave From:</h3></div>
-                        <div class="col-3 col-sm-3 "><%=f.date_field :date_from,class:'form-control'%></td><td></div>
+                        <div class="col-3 col-sm-3 "><%=f.date_field :date_from,class:'form-control'%></td><td>
+                        <span style='color:red'><%=@leave.errors[:date_from].to_sentence%></span></div>
                         <div class="col-3 col-sm-3"><h3>Leave To:</h3></div>
-                        <div class="col-3 col-sm-3"><%=f.date_field :date_to,class:'form-control'%></div>
-                    
+                        <div class="col-3 col-sm-3"><%=f.date_field :date_to,class:'form-control'%>
+                        <span style='color:red'><%=@leave.errors[:date_to].to_sentence%></span></div>
                     </div>	
                     <br>
                     
@@ -31,7 +31,8 @@
                         
                         <div class="col-3 col-sm-3"><h3 class="pl-4">Reason for Leave:</h3></div>
                         <div class="col-9 col-sm-9">
-                        <%=f.text_area :reason,class:'form-control',placeholder:"Valid Reason for leave Application",required: true%>
+                        <%=f.text_area :reason,class:'form-control',placeholder:"Valid Reason for leave Application"%>
+                        <span style='color:red'><%=@leave.errors[:reason].to_sentence%></span>
                         </div>
                     
                     

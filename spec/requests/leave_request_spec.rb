@@ -21,7 +21,8 @@ include Warden::Test::Helpers
 		     leave: attributes_for(:leave,user_id:user.id)
 		    }
 	      end
-	      it { expect { leave }.to change(Leave, :count).by(1) }
+		  
+		  it { expect { leave }.to change(Leave, :count).by(1) }
 	    end
 	end
 

@@ -11,13 +11,24 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
      def create
+      @user1=User.where(role:'owner')
       @user=User.new(get_params)
-      @user.save
-       if @user.role=='owner'
-          redirect_to owner_index_path
+      if @user1[0].blank?
+        if @user.save
+          flash[:SuccessfullyCreated]='Account Created Successfully Now you can log in'
+          redirect_to new_user_session_path
         else
-          redirect_to student_index_path
-        end      
+          render 'new'
+        end
+      else
+        flash[:OwnerExist]='Owner is already exist you can not create another owner'
+        redirect_to new_user_registration_path
+      end
+      #  if @user.role=='owner'
+      #     redirect_to owner_index_path
+      #   else
+      #     redirect_to student_index_path
+      #   end      
      end
 
   # GET /resource/edit
@@ -28,13 +39,11 @@ class User::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
    def update
      @user=User.find(current_user.id)
-     @user.update(get_params)
-      @user.save
-       if @user.role=='owner'
-          redirect_to owner_index_path
-        else
-          redirect_to student_index_path
-        end  
+     if @user.update(get_params)
+      redirect_to root_path
+     else
+      render 'edit'
+     end
    end
 
    def edit
@@ -63,7 +72,7 @@ class User::RegistrationsController < Devise::RegistrationsController
    end
 
    def get_params
-        params.require(:user).permit(:firstname,:lastname,:email,:role,:phoneno,:room_no,:password,:status,:password_confirmation,:ProfilePic)
+        params.require(:user).permit(:firstname,:lastname,:email,:role,:phoneno,:room_no,:password,:status,:address,:password_confirmation,:ProfilePic)
     end
 
   # If you have extra params to permit, append them to the sanitizer.

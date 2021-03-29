@@ -1,14 +1,14 @@
 
 window.validate = function() {
-
+    alert('hi');
     var cardnum=document.getElementById('cardnumber').value
-    alert('cardnum = '+cardnum)
+    
     var cardowner=document.getElementById('cardowner').value
-    alert('cardowner = '+cardowner)
+    
     var year=document.getElementById('year').value
-    alert('year = '+year)
+    
     var cvc=document.getElementById('cvc').value
-    alert('cvc = '+cvc)
+    
     var success=0;
     var startyear=2021;
     if(cardnum.length==16)

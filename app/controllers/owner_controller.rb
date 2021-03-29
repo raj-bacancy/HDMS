@@ -19,12 +19,13 @@ class OwnerController < ApplicationController
          elsif @room.vacancy==0
              flash[:notice]='Not enough space in this room'
              redirect_to new_owner_path
-         elsif @user.save
+         elsif @user.save(validate: false)
          	@room.vacancy=@room.vacancy-1
          	@room.save
              index
              render 'index'
          else
+            flash[:notice]='Something went wrong'
              render 'new'
          end
      end

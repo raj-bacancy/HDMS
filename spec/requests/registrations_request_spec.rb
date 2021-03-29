@@ -15,7 +15,7 @@ RSpec.describe "Registrations", type: :request do
             let(:user) do
                 post '/users',params:{ user:attributes_for(:user,role:'owner')}
             end
-            it { expect { user }.to change(User, :count).by(1) }
+            it { expect { user }.to change(User, :count).by(0) }
         end
 
         context "save user with role=student" do 

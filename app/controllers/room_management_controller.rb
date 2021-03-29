@@ -1,5 +1,8 @@
 class RoomManagementController < ApplicationController
 
+    def index
+        @rooms=Room.all.size
+    end
     def show
         @users=User.where(room_no:params[:id])
     end
@@ -16,6 +19,8 @@ class RoomManagementController < ApplicationController
         @room=Room.new(get_params)
     
         if @room.save
+            flash[:RoomAlert]='Room Created Successfully'
+            index()
             render 'index'
         else
             render 'new'

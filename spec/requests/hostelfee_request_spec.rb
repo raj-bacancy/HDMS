@@ -9,7 +9,7 @@ include Warden::Test::Helpers
 
   	it 'check paid or not going inside else' do	
   		user=create(:user)
-  	login_as(user)
+  		login_as(user)
   		fee=create(:hostelfee,user_id:user.id)
   		get '/student/'+user.id.to_s+'/hostelfee/new'
   		expect(response).to have_http_status(:success)

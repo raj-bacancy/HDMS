@@ -8,12 +8,16 @@
    <div class="row mt-2">
     <div class="col-12">
       <h2><b>Sign Up</b></h2>
+      <%if flash[:OwnerExist]%>
+      <%=flash[:OwnerExist]%>
+      <%end%>
       <%= form_for @user, url: user_registration_path do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+     
           <div class="row mt-4">
               <div class="col">
                 <label>First Name :</label><br>
-                  <%=f.text_field :firstname, class:'form-control'%>
+                  <%=f.text_field :firstname, class:'form-control',id:'fn'%>
+                  <span style='color:red'><%=@user.errors[:firstname].to_sentence%></span>
               </div>
                         <div class="col">
                 <label>Last Name :</label><br>
@@ -24,7 +28,7 @@
           <div class="row mt-4">
               <div class="col">
                 <label>Role :</label><br>
-                <%=f.select :role,['owner','student'],{},{class:'form-control'}%>
+                <%=f.select :role,['owner'],{},{class:'form-control'}%>
               </div>
           </div>
 
@@ -32,6 +36,7 @@
               <div class="col">
                 <label>Email Id :</label>
                 <%=f.email_field :email, class:'form-control'%>
+                <span style='color:red'><%=@user.errors[:email].to_sentence%></span>
               </div>
             </div>
 
@@ -39,10 +44,12 @@
               <div class="col">
                 <label>Phone No :</label>
                 <%=f.text_field :phoneno, class:'form-control'%>
+                <span style='color:red'><%=@user.errors[:phoneno].to_sentence%></span>
               </div>
             <div class="col",display=<%=@visable%>>
-                <label>Room No :</label>
-                <%=f.text_field :room_no, class:'form-control',readonly:true%>
+                <label>Hostel Address :</label>
+                <%=f.text_area :address, class:'form-control'%>
+                <span style='color:red'><%=@user.errors[:address].to_sentence%></span>
               </div>
             </div>
 
@@ -52,13 +59,15 @@
               <em>(<%= @minimum_password_length %> characters minimum)</em>
               <% end %><br />
               <%= f.password_field :password, autocomplete: "new-password",class:'form-control' %>
+              <span style='color:red'><%=@user.errors[:password].to_sentence%></span>
             </div>
 
             <div class="field">
               <%= f.label :password_confirmation %><br />
               <%= f.password_field :password_confirmation, autocomplete: "new-password",class:'form-control' %>
+              <span style='color:red'><%=@user.errors[:password_confirmation].to_sentence%></span>
             </div><br><br>
-          <%=f.submit 'Sign Up'%>   
+            <%=f.submit 'Sign Up',onclick:'return validate()',role:"button"%>   
                 <%end%>
     </div>
   </div>

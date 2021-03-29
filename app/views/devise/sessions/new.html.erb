@@ -10,6 +10,9 @@
    <div class="row mt-2">
     <div class="col-sm-6 col-12">
       <h2><b>Log In From Here</b></h2>
+      <%if flash[:SuccessfullyCreated]%>
+      <%=flash[:SuccessfullyCreated]%>
+      <%end%>
       <%=form_for @user,url:user_session_path,method:'post' do |f|%>
           <div class="row mt-4">
               <div class="col">
@@ -31,8 +34,7 @@
                 
               </div>
             </div><br>
-          <%=f.submit 'Log In',onclick:'abc1();'%> 
-          <%= f.submit 'check', onClick: 'abc1();'  %>  
+          <%=f.submit 'Log In'%>  
                 <%end%>
     </div>
 

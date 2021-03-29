@@ -11,7 +11,6 @@ class User::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
    def create
      @user=current_user
-    
       if @user.blank?
            redirect_to hostel_operation_index_path
          else
